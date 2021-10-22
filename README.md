@@ -6,5 +6,5 @@
 #### Installer Symfony 5.3.9 
 
 ### Fonctionnalité:
-#### Un petit exemple de routage
-#### Un exemple de http GET avec Request
+#### Un exemple de routing un peu avance
+#### Création de l'entité User avec ses paramètres
