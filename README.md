@@ -8,3 +8,4 @@
 ### Fonctionnalité:
 #### Un exemple de routing un peu avance
 #### Création de l'entité User avec ses paramètres
+#### Paramétrage du fichier .env des données pour se connecter à la base de donnée(le base de donnée choisi,...)
