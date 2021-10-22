@@ -9,3 +9,8 @@
 #### Un exemple de routing un peu avance
 #### Création de l'entité User avec ses paramètres
 #### Paramétrage du fichier .env des données pour se connecter à la base de donnée(le base de donnée choisi,...)
+#### Ajout des 2 entité(Topic, Message) sans les relations
+#### Mettre en place les relations entre les entités
+##### De Topic le paramètres author, ManyToOne vers User
+##### De Message le paramètres author, ManyToOne vers User
+##### De Message le paramètres topic, ManyToOne vers Topic
