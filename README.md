@@ -14,3 +14,4 @@
 ##### 1-De Topic le paramètres author, ManyToOne vers User
 ##### 2-De Message le paramètres author, ManyToOne vers User
 ##### 3-De Message le paramètres topic, ManyToOne vers Topic
+#### Mis en place des container(variables) qu'on utilisera dans notre .env 
