@@ -7,3 +7,4 @@
 
 ### Fonctionnalité:
 #### Un petit exemple de routage
+#### Un exemple de http GET avec Request

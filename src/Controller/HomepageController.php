@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+# namespace pour utiliser Request
 use Symfony\Component\HttpFoundation\Request;
 
 class HomepageController extends AbstractController
@@ -28,20 +28,9 @@ class HomepageController extends AbstractController
         $request = Request::createFromGlobals();
         #Choper la variable GET age et mettre valeur par défaut 0
         $age = $request->query->get('age', 0);
-        
-        return $this->render('lucky/test.html.twig', [
+        # retourne la page twig et on prend la variable PHP age mis en relation avec variable twig age
+        return $this->render('test/test.html.twig', [
             'age' => $age,
-        ]);
-    }
-    /**
-     * @Route("/lucky/number")
-     */
-    public function number(): Response
-    {
-        $number = random_int(0, 100);
-
-        return $this->render('lucky/number.html.twig', [
-            'number' => $number,
         ]);
     }
 }
