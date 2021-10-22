@@ -6,4 +6,4 @@
 #### Installer Symfony 5.3.9 
 
 ### Fonctionnalité:
-#### Rien pour le moment
+#### Un petit exemple de routage
