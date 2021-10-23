@@ -5,7 +5,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                 {% if i == 1 %}
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
                 {% elseif i == 2 %}
                     <a class="nav-link active" aria-current="page" href="#">Utilisateur</a>
                 {% elseif i == 3 %}
@@ -17,7 +17,7 @@
                         {# Code ici si utilisateur connecter #}
                     {% else %}
                         {# Code ici si utilisateur non connecter #}
-                        <a class="nav-link active" aria-current="page" href="security/login.html.twig">Se connecter</a>                  
+                        <a class="nav-link active" aria-current="page" href="/login">Se connecter</a>                  
                     {% endif %}                   
                 {% endif %}
                 </li>
