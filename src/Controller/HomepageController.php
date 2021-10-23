@@ -47,5 +47,14 @@ class HomepageController extends AbstractController
             'age' => $age,
         ]);
     }
+    /**
+     * @Route("/onetopic", name="onetopic")
+     */
+    public function onetopic(): Response
+    {
+        return $this->render('base/one_topic.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
+    }
 
 }

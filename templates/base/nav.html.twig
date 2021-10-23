@@ -15,6 +15,8 @@
                 {% else %}
                     {% if app.user %}
                         {# Code ici si utilisateur connecter #}
+                        {# On affichera le nom d utilisateur si iil est connécte#}
+                        {{ app.user.username }} | <a class="nav-link active" aria-current="page" href="{{ path('app_logout') }}">Se déconnecter</a>
                     {% else %}
                         {# Code ici si utilisateur non connecter #}
                         <a class="nav-link active" aria-current="page" href="/login">Se connecter</a>                  
