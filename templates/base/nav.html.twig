@@ -13,7 +13,12 @@
                 {% elseif i == 4 %}
                     <a class="nav-link active" aria-current="page" href="#">Message</a>
                 {% else %}
-                    <a class="nav-link active" aria-current="page" href="security/login.html.twig">Se connecter</a>                   
+                    {% if app.user %}
+                        {# Code ici si utilisateur connecter #}
+                    {% else %}
+                        {# Code ici si utilisateur non connecter #}
+                        <a class="nav-link active" aria-current="page" href="security/login.html.twig">Se connecter</a>                  
+                    {% endif %}                   
                 {% endif %}
                 </li>
             </ul>
