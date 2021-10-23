@@ -24,6 +24,16 @@ class Message
     private $author;
 
     /**
+     * @ORM\Column(type="text")
+     */
+    private $content;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $creationDate;
+
+    /**
      * @ORM\ManyToOne(targetEntity=Topic::class, inversedBy="messages")
      */
     private $topic;
@@ -41,6 +51,30 @@ class Message
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getContent(): ?string
+    {
+        return $this->content;
+    }
+
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
+    public function getCreationDate(): ?\DateTimeInterface
+    {
+        return $this->creationDate;
+    }
+
+    public function setCreationDate(\DateTimeInterface $creationDate): self
+    {
+        $this->creationDate = $creationDate;
 
         return $this;
     }

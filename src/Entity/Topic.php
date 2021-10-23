@@ -20,11 +20,6 @@ class Topic
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=155)
-     */
-    private $title;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isPrivate;
@@ -41,6 +36,11 @@ class Topic
     private $author;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
+
+    /**
      * @ORM\OneToMany(targetEntity=Message::class, mappedBy="topic")
      */
     private $messages;
@@ -53,18 +53,6 @@ class Topic
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getTitle(): ?string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
-
-        return $this;
     }
 
     public function getIsPrivate(): ?bool
@@ -99,6 +87,18 @@ class Topic
     public function setAuthor(?User $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
 
         return $this;
     }
