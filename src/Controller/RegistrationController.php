@@ -31,14 +31,12 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-
             $entityManager = $this->getDoctrine()->getManager();
             // Ajoute les données dans la bdd
             $entityManager->persist($user);
             // Sauvegarde les modifications apporter à la bdd
             $entityManager->flush();
-            // 
-
+            // retourne sur la page d'accueil
             return $this->redirectToRoute('homepage');
         }
 

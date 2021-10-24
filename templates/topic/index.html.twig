@@ -1,0 +1,16 @@
+{% extends 'homepage/index.html.twig' %}
+
+{% block title %}Topic Admin{% endblock %}
+
+{% block body %}
+    <h1>Manage Topic</h1>
+
+    {{ form_start(TopicForm) }}
+        {{ form_row(TopicForm.isPrivate, { 'label': 'Accès Privée' }) }}
+        {{ form_row(TopicForm.creationDate, { 'label': 'Date de creation' }) }}
+        {{ form_row(TopicForm.title, { 'label': 'Titre' }) }}
+        {{ form_row(TopicForm.author, { 'label': 'Auteur' }) }}
+
+        <button type="submit" class="btn-primary">Créer</button>
+    {{ form_end(TopicForm) }}
+{% endblock %}
