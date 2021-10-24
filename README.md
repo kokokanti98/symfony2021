@@ -17,3 +17,4 @@
 #### Mis en place des container(variables) qu'on utilisera dans notre .env 
 #### Creation de la page de connexion et page d'inscription( make:auth et make:registration)
 #### Modification du formulaire d'inscription
+#### Mise en place du controller et formulaire de l'entité topic via symfony console:make controller/form
