@@ -36,6 +36,8 @@ class RegistrationController extends AbstractController
             $entityManager->persist($user);
             // Sauvegarde les modifications apporter à la bdd
             $entityManager->flush();
+            // affiche un short message
+            $this->addFlash('message','Utilisateur créer avec succès');
             // retourne sur la page d'accueil
             return $this->redirectToRoute('homepage');
         }

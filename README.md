@@ -18,3 +18,4 @@
 #### Creation de la page de connexion et page d'inscription( make:auth et make:registration)
 #### Modification du formulaire d'inscription
 #### Mise en place du controller et formulaire de l'entité topic via symfony console:make controller/form
+#### Ajout du mode Admin sur les sujets de discussions(topics)

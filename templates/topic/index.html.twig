@@ -10,7 +10,48 @@
         {{ form_row(TopicForm.creationDate, { 'label': 'Date de creation' }) }}
         {{ form_row(TopicForm.title, { 'label': 'Titre' }) }}
         {{ form_row(TopicForm.author, { 'label': 'Auteur' }) }}
-
-        <button type="submit" class="btn-primary">Créer</button>
+        {# On va changer le bouton pour affimer que c'est une modification ou soit une suppression #}
+        {% if majMode  %}
+            {# Code ici si c'est une modification #}
+            <button type="submit" class="btn-warning">Modifier</button>
+        {% else %}
+            {# Code ici si c'est un ajout #}
+            <button type="submit" class="btn-primary">Créer</button>              
+        {% endif %}
     {{ form_end(TopicForm) }}
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Privée</th>
+        <th scope="col">Date de création</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for topic in topics %}
+            <tr>
+            <th scope="row">{{topic.id}}</th>
+            <td>{{topic.author.firstname}}</td>
+            <td>
+                {% if topic.isPrivate == 0 %}
+                    {# Code ici si le sujet de discussion n'est pas privée #}
+                    Non
+                {% else %}
+                    {# Code ici si le sujet de discussion est privée #}
+                    Oui                
+                {% endif %}
+            </td>
+            <td>@{{topic.creationDate |date('d-m-Y')}}</td>
+            <td>{{topic.title}}</td>
+            <td>
+                <a type="button" class="btn btn-danger" href="{{ path('suppr_topic', {id: topic.id}) }}">Supprimmer</a>
+                <a type="button" class="btn btn-warning" href="{{ path('maj_topic', {id: topic.id}) }}">Modifier</a>
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
 {% endblock %}

@@ -20,15 +20,19 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+        // ajout des différentes cases de notre formulaires
             ->add('email')
             ->add('firstname')
             ->add('lastname')
             ->add('roles', ChoiceType::class, [
                 'choices'  => [
-                    'Visiteur' => null,
-                    'Admin' => true,
-                    'Utilisateur' => false,
+                    'Editeur' => 'ROLE_EDITOR',
+                    'Admnistrateur' => 'ROLE_ADMIN',
+                    'Utilisateur' => 'ROLE_USER',
                 ],
+                'expanded' => true,
+                //Liste à selection multiple avec le expanded en true y aura des cases à cocher
+                'multiple' => true,
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,

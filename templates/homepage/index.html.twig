@@ -11,7 +11,7 @@
             {% if app.user %}
                 {# Code ici si utilisateur connecter #}
                 {# On affichera le nom d utilisateur si iil est connécte#}
-                <h3>Bienvenue  {{ app.user.username }}, voici la liste des sujets de discussions sur notre site:</h3>
+                <h3>Bienvenue  {{ app.user.lastname }}, voici la liste des sujets de discussions sur notre site:</h3>
             {% else %}
                 {# Code ici si utilisateur non connecter #}
                 <h3>Bienvenue Mr/Mme Visiteur, voici la liste des sujets de discussions sur notre site:</h3>                
