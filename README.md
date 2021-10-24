@@ -15,3 +15,4 @@
 ##### 2-De Message le paramètres author, ManyToOne vers User
 ##### 3-De Message le paramètres topic, ManyToOne vers Topic
 #### Mis en place des container(variables) qu'on utilisera dans notre .env 
+#### Creation de la page de connexion et page d'inscription( make:auth et make:registration)
