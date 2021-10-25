@@ -22,7 +22,7 @@ class HomepageController extends AbstractController
 		}
         // Preparation du repository afin de lancer les injections de dépendances
         $repository = $this->getDoctrine()->getRepository(Topic::class);
-        // Rechercher tous les données dans la bdd(topic) dont le plus récents sera ajouté en bas ordre chornologique des sujets de discussions
+        // Rechercher tous les données dans la bdd(topic) dont le plus récents sera ajoutée en bas ordre chornologique des sujets de discussions
         $topics = $repository->findAllOrderByASC_CreationDate();
         return $this->render('homepage/index.html.twig', [
             'controller_name' => 'HomepageController',

@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class TopicController extends AbstractController
 {
-    # Fonction Index pour Créer, Modifier, et Voir tous les topics
+    # Fonction Index pour Créer, Modifier, et Voir tous les topicss
     /**
      * @Route("/topic", name="topic", methods={"GET", "POST"})
      * @Route("/topic/maj/{id}", name="maj_topic", methods={"GET", "POST"})

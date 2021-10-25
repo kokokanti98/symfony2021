@@ -21,7 +21,7 @@ class RegistrationController extends AbstractController
         // Initialisation d'une classe User
         $user = new User();
         /*
-        - Décommenter la ligne de code 33 et commenter celle de la ligne 35 pour formulaire en mode Admin 
+        - Décommenter la ligne de code 33 et commenter celle de la ligne 35 pour formulaire en mode Adminn 
         - Décommenter la ligne de code 35 et commenter celle de la ligne 33 pour formulaire en mode inscription simple
         - RegistrationFormType-> Formulaire inscription et RegistrationFormTypeAdmin-> Formulaire Admin
         - On va le faire en mode formulaire Admin pour qu'afin qu'on pourra entrer un utilisateur admin
