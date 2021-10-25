@@ -1,0 +1,69 @@
+{% extends 'homepage/index.html.twig' %}
+
+{% block title %}User Admin{% endblock %}
+
+{% block body %}
+    <h1>Gestion des utilisateurs</h1>
+    {{ form_start(UserForm) }}
+        {{ form_row(UserForm.email, { 'label': 'Email' }) }}
+        {{ form_row(UserForm.firstname, { 'label': 'Prenom' }) }}
+        {{ form_row(UserForm.lastname, { 'label': 'Nom' }) }}
+        {{ form_row(UserForm.roles, { 'label': 'Rôles' }) }}
+        {{ form_row(UserForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(UserForm.agreeTerms, { 'label': 'Veuillez agréer au conditions de notre site' }) }}
+        {# On va changer le bouton pour affimer que c'est une modification ou soit une suppression #}
+        {% if majMode  %}
+            {# Code ici si c'est une modification #}
+            <button type="submit" class="btn-warning">Modifier</button>
+        {% else %}
+            {# Code ici si c'est un ajout #}
+            <button type="submit" class="btn-primary">Créer</button>              
+        {% endif %}
+    {{ form_end(UserForm) }}
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prenom</th>
+        <th scope="col">Email</th>
+        <th scope="col">Rôles</th>
+        <th scope="col">Mot de passe(hachage)</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in users %}
+            <tr>
+            <th scope="row">{{user.id}}</th>
+            <td>{{user.lastname}}</td>
+            <td>
+                {{user.firstname}}
+            </td>
+            <td>{{user.email}}</td>
+            <td>
+                {% for role in user.roles %}
+                    {% if role =='ROLE_USER' %}
+                        Utilisateur
+                    {% elseif role =='ROLE_ADMIN' %}
+                        Administrateur
+                    {% else %}
+                        Editeur
+                    {% endif %}
+                {% endfor %}
+            </td>
+            <td>
+                {{user.password}}
+            </td>
+            <td>
+                <a type="button" class="btn btn-danger" href="{{ path('suppr_user', {id: user.id}) }}">Supprimmer</a>
+                <a type="button" class="btn btn-warning" href="{{ path('maj_user', {id: user.id}) }}">Modifier</a>
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+    
+{% endblock %}

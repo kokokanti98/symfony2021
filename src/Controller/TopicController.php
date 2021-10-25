@@ -32,13 +32,11 @@ class TopicController extends AbstractController
         $majmode = $topic-> getId() !== null;
         // Dans le cas ou on notre method sera un post
         if ($request->isMethod('post')) {
-            // Si le formulaire est valide on va encoder d'abord le mdp
             if ($form->isSubmitted() && $form->isValid()) {
                 // Ajoute les données dans la bdd
                 $entityManager->persist($topic);
                 // Sauvegarde les modifications apporter à la bdd
                 $entityManager->flush();
-                //$topic = null;
                 $majmode = false;
                 // redirection vers l url de nom topic
                 return $this->redirect( $this->generateUrl('topic'));
