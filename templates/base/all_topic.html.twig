@@ -1,18 +1,24 @@
-<!---Front exemple pour un topic creer-->
-<div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success">Créer par: Mathew</div>
-  <div class="card-body">
-    <a class="card-title" href="/onetopic">News France 2021</a>
-    <p class="card-text">Quelques text</p>
-  </div>
-  <div class="card-footer bg-transparent border-success">Date de publication: 23/10/2021 22:50</div>
-</div>
-<!---Front exemple pour un topic avec un cadenas creer-->
-<div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header bg-transparent border-success"> X Créer par: Jerome</div>
-  <div class="card-body">
-    <a class="card-title" href="/onetopic">News Espagne 2021</a>
-    <p class="card-text">Quelques text</p>
-  </div>
-  <div class="card-footer bg-transparent border-success">Date de publication: 23/10/2021 20:50</div>
-</div>
+{% for topic in topics %}
+    <!---Front exemple pour un topic creer-->
+    {% if topic.isPrivate == 1 %}
+        {# Code ici si le sujet de discussion est privée #}
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Discussion Privée || {{topic.title}}</h5>
+            <p class="card-text">Créer par : {{topic.author.firstname}} , le {{topic.creationDate |date('d-m-Y')}}</p>
+            <a href="{{ path('voir_topic', {id: topic.id}) }}" class="btn btn-primary">Voir</a>
+          </div>
+        </div>
+    {% else %}
+        {# Code ici si le sujet de discussion n'est pas privée #}
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{topic.title}}</h5>
+            <p class="card-text">Créer par : {{topic.author.firstname}} , le {{topic.creationDate |date('d-m-Y')}}</p>
+            <a href="{{ path('voir_topic', {id: topic.id}) }}" class="btn btn-primary">Voir</a>
+          </div>
+        </div>              
+    {% endif %}
+{% endfor %}

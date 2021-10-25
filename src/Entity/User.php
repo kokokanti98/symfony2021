@@ -237,15 +237,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-    // Pour afficher la case qu'on veut voir sur les utilisateurs créer sur la valeur retourner
     /**
-     * Generates the magic method
+     * Pour afficher la case qu'on veut voir sur les utilisateurs créer sur la valeur retourner
      * 
      */
     public function __toString(){
-        // to show the name of the Category in the select
+        // afficher le prenom de l'utilisateur
         return $this->firstname;
-        // to show the id of the Category in the select
-        // return $this->id;
     }
 }

@@ -19,3 +19,4 @@
 #### Modification du formulaire d'inscription
 #### Mise en place du controller et formulaire de l'entité topic via symfony console:make controller/form
 #### Ajout du mode Admin sur les sujets de discussions(topics)
+#### Synchronisation des données sur le site web sur les sujets de discussions et affichage détaillé d'un sujet discussion 

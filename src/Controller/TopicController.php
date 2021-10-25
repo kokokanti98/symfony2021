@@ -44,7 +44,7 @@ class TopicController extends AbstractController
                 return $this->redirect( $this->generateUrl('topic'));
             }
         }
-        // Preparation du repository afin de lancer les injections de dépendancess
+        // Preparation du repository afin de lancer les injections de dépendances
         $repository = $this->getDoctrine()->getRepository(Topic::class);
         // Rechercher tous les données dans la bdd(topic)
         $topics = $repository->findAll();
@@ -57,7 +57,7 @@ class TopicController extends AbstractController
     }
     # La fonction suppr_topic pour supprimer un topic
     /**
-     * @Route("/topic/suppr/{id}", name="suppr_topic", methods={"GET", "POST"})
+     * @Route("/topic/suppr/{id}", name="suppr_topic")
      */
     public function suppr_topic(Topic $topic = null): Response
     {  
@@ -74,5 +74,23 @@ class TopicController extends AbstractController
         $entityManager->flush();
         // Redirection vers l'url nommé topic
         return $this->redirect( $this->generateUrl('topic'));
+    }
+    /**
+     * @Route("/topic/voir/{id}", name="voir_topic")
+     */
+    public function see_one_topic(Topic $topic = null): Response
+    {  
+        // Si topic est null donc on creer une classe topic
+		if(!$topic){
+            // Initialisation d'une classe Topic
+            $topic = new Topic();
+		}
+        //dd($topic->getId());
+        //dd($topic->getMessages());
+        //dd($user_id);
+        return $this->render('base/one_topic.html.twig', [
+            'controller_name' => 'HomepageController',
+            'topic' => $topic,
+        ]);
     }
 }

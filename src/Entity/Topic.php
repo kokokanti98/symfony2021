@@ -132,5 +132,13 @@ class Topic
 
         return $this;
     }
+    /**
+     * Pour afficher la case qu'on veut voir sur les topics créer sur la valeur retourner
+     * 
+     */
+    public function __toString(){
+        // afficher le titre du topic // on peut choisir autre paramètres selon le choix
+        return $this->title;
+    }
     
 }
