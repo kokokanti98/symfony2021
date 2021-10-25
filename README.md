@@ -1,4 +1,4 @@
-# symfony2021 routing banch
+# symfony2021 routing
 ## A symfony 5.3.9 web app
 ### Prérequis:
 #### Installer PHP ersion 7.3 ou plus
