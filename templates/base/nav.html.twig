@@ -6,13 +6,27 @@
                 <li class="nav-item">
                 {% if i == 1 %}
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
-                {% elseif i == 2 %}
-                    <a class="nav-link active" aria-current="page" href="/user">Utilisateur</a>
-                {% elseif i == 3 %}
-                    <a class="nav-link active" aria-current="page" href="/topic">Topic</a>
-                {% elseif i == 4 %}
-                    <a class="nav-link active" aria-current="page" href="/message">Message</a>
-                {% else %}
+                {% elseif i == 2 and app.user %}
+                    {% for role in app.user.roles %}
+                        {% if role =='ROLE_ADMIN' %}
+                            <a class="nav-link active" aria-current="page" href="/user">Utilisateur</a>
+                        {% endif %}
+                    {% endfor %}
+                {% elseif i == 3 and app.user%}
+                    {% for role in app.user.roles %}
+                        {% if role =='ROLE_ADMIN' %}
+                            <a class="nav-link active" aria-current="page" href="/topic">Topic(Admin)</a>
+                        {% else %}
+                            <a class="nav-link active" aria-current="page" href="/topic/create">Topic(Créer)</a>
+                        {% endif %}
+                    {% endfor %}
+                {% elseif i == 4 and app.user%}
+                    {% for role in app.user.roles %}
+                        {% if role =='ROLE_ADMIN' %}
+                            <a class="nav-link active" aria-current="page" href="/message">Message</a>
+                        {% endif %}
+                    {% endfor %}
+                {% elseif i == 5 %}
                     {% if app.user %}
                         {# Code ici si utilisateur connecter #}
                         {# On affichera le nom d utilisateur si iil est connécte#}

@@ -1,6 +1,6 @@
 {% for topic in topics %}
-    <!---Front exemple pour un topic creer-->
-    {% if topic.isPrivate == 1 %}
+
+    {% if topic.isPrivate == 1 and app.user %}
         {# Code ici si le sujet de discussion est privée #}
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="..." alt="Card image cap">
@@ -10,7 +10,7 @@
             <a href="{{ path('voir_topic', {id: topic.id}) }}" class="btn btn-primary">Voir</a>
           </div>
         </div>
-    {% else %}
+    {% elseif topic.isPrivate != 1 %}
         {# Code ici si le sujet de discussion n'est pas privée #}
         <div class="card" style="width: 18rem;">
           <img class="card-img-top" src="..." alt="Card image cap">

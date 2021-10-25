@@ -1,0 +1,16 @@
+{% extends 'homepage/index.html.twig' %}
+
+{% block title %}Creation d'un sujet de discussion{% endblock %}
+
+{% block body %}
+    <h1>Gestion des sujets de discussions</h1>
+    {# Code ici si c'est un simple utilisateur on affichera le tableau pour la creation d un sujet de discussion #}
+    {# Formulaire du mode utilisateur simple #}
+    {{ form_start(TopicUserForm) }}
+        {{ form_row(TopicUserForm.isPrivate, { 'label': 'Accès Privée' }) }}
+        {{ form_row(TopicUserForm.title, { 'label': 'Titre' }) }}
+        {# Button pou creer un nouveau sujet de discussions #}
+        <button type="submit" class="btn-primary">Créer</button>
+    {{ form_end(TopicUserForm) }}
+
+{% endblock %}

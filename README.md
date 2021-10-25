@@ -19,7 +19,12 @@
 #### Modification du formulaire d'inscription
 #### Mise en place du controller et formulaire de l'entité topic via symfony console:make controller/form
 #### Ajout du mode Admin sur les sujets de discussions(topics)
-#### Synchronisation des données sur le site web sur les sujets de discussions et affichage détaillé d'un sujet discussion 
+#### Synchronisation des données sur le site web sur les sujets de discussions et affichage détaillé d'un sujet discussions 
 
 #### Ajout du mode Admin sur les utilisateurs(users)
 #### Ajout du mode Admin sur les messages
+#### Les utilisateurs connécte peuvent envoyer des messages sur le sujet de discussions
+#### L'utilisateur saura voir ses messages pour ne pas se perdre dans la discussion grâce à l'auteur nommé "Vous"
+#### Mode visiteur qui pourra juste lire les sujets de discussions(avec les sujet de discussions privée)
+#### Ajout d'accès aux rôles des utilisateur( seul l'admin peu acéder à tous les pages de gestions des tables dans la bdd)
+#### Limitations d'accès des visiteurs(ne peuvent pas voir et accéder aux discussions privée)
