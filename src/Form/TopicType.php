@@ -6,6 +6,11 @@ use App\Entity\Topic;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\User;
 
 class TopicType extends AbstractType
 {
@@ -14,8 +19,24 @@ class TopicType extends AbstractType
         $builder
             ->add('isPrivate')
             ->add('creationDate')
-            ->add('title')
-            ->add('author')
+            ->add('title', TextType::class, [
+                'constraints' => [
+                    // Règle dont le champ ne doit pas être vide va afficher un message
+                    new NotBlank([
+                        'message' => 'Veuillez entrer le sujet de votre discussion',
+                    ]),
+                ],
+            ])
+            ->add('author', EntityType::class, [
+                // Bien préciser la classe dont on parle vis à vis du champ
+                'class' => User::class,
+                'constraints' => [
+                    // Règle dont le champ ne doit pas être vide va afficher un message
+                    new NotBlank([
+                        'message' => 'Veuillez entrer votre auteur',
+                    ]),
+                ],
+            ])
         ;
     }
 

@@ -21,9 +21,53 @@ class RegistrationFormType extends AbstractType
     {
         $builder
         // ajout des différentes cases de notre formulaires
-            ->add('email')
-            ->add('firstname')
-            ->add('lastname')
+            ->add('email', EmailType::class, [
+                'constraints' => [
+                    // Règle dont le champ ne doit pas être vide va afficher un message
+                    new NotBlank([
+                        'message' => 'Veuillez entrer un adresse email valide',
+                    ]),
+                    // Règle de Taille du champ
+                    new Length([
+                        //valeur minimum
+                        'min' => 18,
+                        'minMessage' => 'Votre adrese email doit au moins contenir {{ limit }} caractères',
+                        //valeur max prise
+                        'max' => 150,
+                    ]),
+                ],
+            ])
+            ->add('firstname', TextType::class, [
+                'constraints' => [
+                    // Règle dont le champ ne doit pas être vide va afficher un message
+                    new NotBlank([
+                        'message' => 'Veuillez entrer votre prenom',
+                    ]),
+                    // Règle de Taille du champ
+                    new Length([
+                        //valeur minimum
+                        'min' => 2,
+                        'minMessage' => 'Votre prenom doit au moins contenir {{ limit }} caractères',
+                        //valeur max prise
+                        'max' => 150,
+                    ]),
+                ],
+            ])
+            ->add('lastname' , TextType::class, [
+                'constraints' => [
+                    // Règle dont le champ ne doit pas être vide va afficher un message
+                    new NotBlank([
+                        'message' => 'Veuillez entrer votre nom',
+                    ]),
+                    // Règle de Taille du champ
+                    new Length([
+                        'min' => 2,
+                        'minMessage' => 'Votre nom de famille doit au moins contenir {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 255,
+                    ]),
+                ],
+            ])
             ->add('roles', ChoiceType::class, [
                 'choices'  => [
                     'Utilisateur' => 'ROLE_USER',
@@ -41,20 +85,20 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+                  // Ce champ mot de passe ne sera pas lier directement sur l'objet en question(User),
+                // il sera li et encoder dans le controller avant d'être lier
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     // Règle dont le champ mdp ne doit pas être vide va afficher un message
                     new NotBlank([
-                        'message' => 'Veuillze entrez un mot de passe',
+                        'message' => 'Veuillez entrer un mot de passe',
                     ]),
                     // Règle de Taille du mot de passe
                     new Length([
                         'min' => 6,
                         'minMessage' => 'La taille de votre mot de passe doit contenir au moins {{ limit }} caractères',
-                        // max length allowed by Symfony for security reasons
+                        //valeur max que symfony autorise pour des mesures de sécurité
                         'max' => 4096,
                     ]),
                 ],
