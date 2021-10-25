@@ -73,7 +73,7 @@ class TopicController extends AbstractController
         // Preparation du repository afin de lancer les injections de dépendances
         $repository = $this->getDoctrine()->getRepository(Topic::class);
         // Rechercher tous les données dans la bdd(topic)
-        $topics = $repository->findAll();
+        $topics = $repository->findAllOrderByASC_CreationDate();
         // redirection de page vers la page topic 
         return $this->render('topic/index.html.twig', [
             'TopicForm' => $form->createView(),

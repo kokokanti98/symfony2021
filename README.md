@@ -28,3 +28,4 @@
 #### Mode visiteur qui pourra juste lire les sujets de discussions(avec les sujet de discussions privée)
 #### Ajout d'accès aux rôles des utilisateur( seul l'admin peu acéder à tous les pages de gestions des tables dans la bdd)
 #### Limitations d'accès des visiteurs(ne peuvent pas voir et accéder aux discussions privée)
+#### Création d'un autre formulaire afin de bien différencier la création d'utilisateur(Mode Admin/ Inscriptiion)

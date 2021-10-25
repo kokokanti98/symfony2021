@@ -19,22 +19,18 @@ class TopicRepository extends ServiceEntityRepository
         parent::__construct($registry, Topic::class);
     }
 
+    // Function pour avoir listes des topics en ordre chronologique
     // /**
     //  * @return Topic[] Returns an array of Topic objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function findAllOrderByASC_CreationDate()
     {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('t.creationDate', 'ASC')
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Topic

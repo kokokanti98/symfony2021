@@ -15,7 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
-class RegistrationFormType extends AbstractType
+class RegistrationFormTypeAdmin extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -26,6 +26,7 @@ class RegistrationFormType extends AbstractType
             ->add('lastname')
             ->add('roles', ChoiceType::class, [
                 'choices'  => [
+                    'Admnistrateur' => 'ROLE_ADMIN',
                     'Utilisateur' => 'ROLE_USER',
                 ],
                 'expanded' => true,
