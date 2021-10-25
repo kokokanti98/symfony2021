@@ -11,7 +11,7 @@ use App\Form\MessageType;
 
 class MessageController extends AbstractController
 {
-     # Fonction Index pour Créer, Modifier, et Voir tous les messagee
+     # Fonction Index pour Créer, Modifier, et Voir tous les message
     /**
      * @Route("/message", name="message", methods={"GET", "POST"})
      * @Route("/message/maj/{id}", name="maj_message", methods={"GET", "POST"})
@@ -57,7 +57,7 @@ class MessageController extends AbstractController
     /**
      * @Route("/message/suppr/{id}", name="suppr_message", methods={"GET"})
      */
-    public function suppr_message(Message $message = null): Response
+    public function SupprMessage(Message $message = null): Response
     {  
         // Si message est null donc on creer une classe message
 		if(!$message){

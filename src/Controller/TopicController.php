@@ -16,7 +16,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class TopicController extends AbstractController
 {
-    # Fonction Index pour Créer, Modifier, et Voir tous les topicss
+    # Fonction Index pour Créer, Modifier, et Voir tous les topics
     /**
      * @Route("/topic", name="topic", methods={"GET", "POST"})
      * @Route("/topic/maj/{id}", name="maj_topic", methods={"GET", "POST"})
@@ -86,7 +86,7 @@ class TopicController extends AbstractController
     /**
      * @Route("/topic/suppr/{id}", name="suppr_topic", methods={"GET"})
      */
-    public function suppr_topic(Topic $topic = null): Response
+    public function SupprTopic(Topic $topic = null): Response
     {  
         // Si topic est null donc on creer une classe topic
 		if(!$topic){
@@ -105,7 +105,7 @@ class TopicController extends AbstractController
     /**
      * @Route("/topic/voir/{id}", name="voir_topic")
      */
-    public function see_one_topic(Topic $topic = null, Message $message = null, Request $request, User $user = null, AuthenticationUtils $authenticationUtils): Response
+    public function SeeOneTopic(Topic $topic = null, Message $message = null, Request $request, User $user = null, AuthenticationUtils $authenticationUtils): Response
     {  
         // Si topic est null donc on creer une classe topic
 		if(!$topic){

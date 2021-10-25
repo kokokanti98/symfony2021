@@ -37,7 +37,7 @@ class Message
      * @ORM\ManyToOne(targetEntity=Topic::class, inversedBy="messages")
      */
     private $topic;
-
+    
     public function getId(): ?int
     {
         return $this->id;

@@ -63,7 +63,7 @@ class RegistrationController extends AbstractController
      * @Route("/user", name="user", methods={"GET", "POST"})
      * @Route("/user/maj/{id}", name="maj_user", methods={"GET", "POST"})
      */
-    public function users(User $user = null, Request $request,UserPasswordHasherInterface $userPasswordHasherInterface, $majmode = false): Response
+    public function Users(User $user = null, Request $request,UserPasswordHasherInterface $userPasswordHasherInterface, $majmode = false): Response
     {
         // Si user est null donc on creer une classe user
 		if(!$user){
@@ -116,7 +116,7 @@ class RegistrationController extends AbstractController
     /**
      * @Route("/user/suppr/{id}", name="suppr_user", methods={"GET"})
      */
-    public function suppr_user(User $user = null): Response
+    public function SupprUser(User $user = null): Response
     {  
         // Si user est null donc on creer une classe user
 		if(!$user){
