@@ -11,7 +11,7 @@ use App\Form\MessageType;
 
 class MessageController extends AbstractController
 {
-     # Fonction Index pour Créer, Modifier, et Voir tous les message
+     # Fonction Index pour Créer, Modifier, et Voir tous les messagee
     /**
      * @Route("/message", name="message", methods={"GET", "POST"})
      * @Route("/message/maj/{id}", name="maj_message", methods={"GET", "POST"})
