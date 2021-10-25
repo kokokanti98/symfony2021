@@ -7,6 +7,9 @@
 #### Installer XAMP/ou WAMP avec mariadb-10.4.18 pour mise en place de la base de données sinon les variables de configuration de la bdd se trouve dans /config/services.yaml
 #### Configuration de l'url de la base de donées est en server mysql symfony
 
+## Schema de la BDD:
+### Voici le lien vers le schéma MCD et MLD de notre base de donéees : https://drive.google.com/drive/folders/1k0u0aiy_E6nX8HcWDzaJkKYXFSfU4Aju?usp=sharing
+
 
 ## Installations:
 ### Téléchager la dernière version sur le lien(branche exo_form) : https://github.com/kokokanti98/symfony2021/tree/exo_Form
