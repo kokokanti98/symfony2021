@@ -13,8 +13,8 @@
 ## Installations:
 ### Téléchager la dernière version sur le lien(branche exo_form) : https://github.com/kokokanti98/symfony2021/tree/exo_Form
 ### Lancer les commandes suivantes dans le CMD(invite de commande) dans le répertoire du projet téléchargé:
+#### composer require symfony/runtime
 #### symfony console doctrine:database:create
-#### symfony console make:migration
 #### symfony console doctrine:migrations:migrate
 #### symfony server:start
 ### Allez sur un navigateur web avec l'adresse du server symfony sur le cmd en vert, généralement c'est le : https://127.0.0.1:8000
