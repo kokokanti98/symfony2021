@@ -102,7 +102,7 @@ class RegistrationController extends AbstractController
 
     # La fonction suppr_user pour supprimer un user
     /**
-     * @Route("/user/suppr/{id}", name="suppr_user")
+     * @Route("/user/suppr/{id}", name="suppr_user", methods={"GET"})
      */
     public function suppr_user(User $user = null): Response
     {  

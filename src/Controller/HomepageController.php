@@ -11,7 +11,7 @@ use App\Entity\Topic;
 class HomepageController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage", methods={"GET", "POST"})
      */
     public function index(Topic $topic = null, Request $request): Response
     {

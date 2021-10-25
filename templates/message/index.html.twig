@@ -1,0 +1,51 @@
+{% extends 'homepage/index.html.twig' %}
+
+{% block title %}Message Admin{% endblock %}
+
+{% block body %}
+    <h1>Gestion des Messages</h1>
+
+    {{ form_start(MessageForm) }}
+        {{ form_row(MessageForm.content, { 'label': 'Contenu' }) }}
+        {{ form_row(MessageForm.creationDate, { 'label': 'Date d envoi' }) }}
+        {{ form_row(MessageForm.author, { 'label': 'Auteur' }) }}
+        {{ form_row(MessageForm.topic, { 'label': 'Sujet de discusion' }) }}
+        {# On va changer le bouton pour affimer que c'est une modification ou soit une suppression #}
+        {% if majMode  %}
+            {# Code ici si c'est une modification #}
+            <button type="submit" class="btn-warning">Modifier</button>
+        {% else %}
+            {# Code ici si c'est un ajout #}
+            <button type="submit" class="btn-primary">Créer</button>              
+        {% endif %}
+    {{ form_end(MessageForm) }}
+    <table class="table table-striped">
+    <thead>
+        <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Auteur</th>
+        <th scope="col">Titre du sujet de discussion</th>
+        <th scope="col">Date d'envoi</th>
+        <th scope="col">Contenu</th>
+        <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for message in messages %}
+            <tr>
+            <th scope="row">{{message.id}}</th>
+            <td>{{message.author.firstname}}</td>
+            <td>
+                {{message.topic.title}}
+            </td>
+            <td>{{message.creationDate |date("d-m-Y à H:i", "Europe/Paris")}}</td>
+            <td>{{message.content}}</td>
+            <td>
+                <a type="button" class="btn btn-danger" href="{{ path('suppr_message', {id: message.id}) }}">Supprimmer</a>
+                <a type="button" class="btn btn-warning" href="{{ path('maj_message', {id: message.id}) }}">Modifier</a>
+            </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

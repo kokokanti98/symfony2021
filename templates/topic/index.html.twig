@@ -44,7 +44,7 @@
                     Oui                
                 {% endif %}
             </td>
-            <td>{{topic.creationDate |date('d-m-Y')}}</td>
+            <td>{{topic.creationDate |date("d-m-Y à H:i", "Europe/Paris")}}</td>
             <td>{{topic.title}}</td>
             <td>
                 <a type="button" class="btn btn-danger" href="{{ path('suppr_topic', {id: topic.id}) }}">Supprimmer</a>

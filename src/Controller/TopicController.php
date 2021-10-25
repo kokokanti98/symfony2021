@@ -55,7 +55,7 @@ class TopicController extends AbstractController
     }
     # La fonction suppr_topic pour supprimer un topic
     /**
-     * @Route("/topic/suppr/{id}", name="suppr_topic")
+     * @Route("/topic/suppr/{id}", name="suppr_topic", methods={"GET"})
      */
     public function suppr_topic(Topic $topic = null): Response
     {  

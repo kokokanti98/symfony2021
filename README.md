@@ -22,3 +22,4 @@
 #### Synchronisation des données sur le site web sur les sujets de discussions et affichage détaillé d'un sujet discussion 
 
 #### Ajout du mode Admin sur les utilisateurs(users)
+#### Ajout du mode Admin sur les messages

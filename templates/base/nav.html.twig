@@ -7,11 +7,11 @@
                 {% if i == 1 %}
                     <a class="nav-link active" aria-current="page" href="/">Home</a>
                 {% elseif i == 2 %}
-                    <a class="nav-link active" aria-current="page" href="#">Utilisateur</a>
+                    <a class="nav-link active" aria-current="page" href="/user">Utilisateur</a>
                 {% elseif i == 3 %}
                     <a class="nav-link active" aria-current="page" href="/topic">Topic</a>
                 {% elseif i == 4 %}
-                    <a class="nav-link active" aria-current="page" href="#">Message</a>
+                    <a class="nav-link active" aria-current="page" href="/message">Message</a>
                 {% else %}
                     {% if app.user %}
                         {# Code ici si utilisateur connecter #}
